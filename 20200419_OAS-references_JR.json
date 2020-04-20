@@ -1,0 +1,371 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "JR Address / Location Objs",
+        "title": "JR Address / Location Objs",
+        "version": "V20-04-01"
+    },
+    "paths": {},
+    "components": {
+        "schemas": {
+            "Address": {
+                "type": "object",
+                "description": "Physical or Mailing address",
+                "properties": {
+                    "City": {
+                        "$ref": "#/components/schemas/City"
+                    },
+                    "StateProvince": {
+                        "$ref": "#/components/schemas/StateProvince"
+                    },
+                    "ZipPostalCode": {
+                        "$ref": "#/components/schemas/ZipPostalCode"
+                    },
+                    "Country": {
+                        "$ref": "#/components/schemas/Country"
+                    },
+                    "County": {
+                        "$ref": "#/components/schemas/County"
+                    },
+                    "Location": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "AddrLine1": {
+                        "$ref": "#/components/schemas/AddrLine1"
+                    },
+                    "AddrLine2": {
+                        "$ref": "#/components/schemas/AddrLine2"
+                    },
+                    "AddrLine3": {
+                        "$ref": "#/components/schemas/AddrLine3"
+                    }
+                }
+            },
+            "Contact": {
+                "type": "object",
+                "description": "A person or contact information",
+                "properties": {
+                    "Address": {
+                        "$ref": "#/components/schemas/Address"
+                    },
+                    "Email": {
+                        "$ref": "#/components/schemas/Email"
+                    },
+                    "MobilePhone": {
+                        "$ref": "#/components/schemas/MobilePhone"
+                    },
+                    "WorkPhone": {
+                        "$ref": "#/components/schemas/WorkPhone"
+                    },
+                    "HomePhone": {
+                        "$ref": "#/components/schemas/HomePhone"
+                    },
+                    "FirstName": {
+                        "$ref": "#/components/schemas/FirstName"
+                    },
+                    "LastName": {
+                        "$ref": "#/components/schemas/LastName"
+                    }
+                }
+            },
+            "City": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Name of the city in the physical or mailing address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "StateProvince": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "State of a Province of the mailing or physical address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "ZipPostalCode": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Zip Code / Postal Code of a mailing or physical address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "Country": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "ISO country code where system is located.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "Latitude": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Decimal value of latitude of the physical site in degrees.  Positive North of the Equator.  Negative South of the Equator",
+                        "x-ob-item-type": "num-us:planeAngleItemType",
+                        "x-ob-unit": [
+                            "Degree",
+                            "Radian"
+                        ],
+                        "x-ob-enum": null
+                    }
+                ]
+            },
+            "Longitude": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Decimal value of longitude of the physical site in degrees.  Positive east of the Prime Meridian.  Negative west of the Prime Meridian.  North America is negative..",
+                        "x-ob-item-type": "num-us:planeAngleItemType",
+                        "x-ob-unit": [
+                            "Degree",
+                            "Radian"
+                        ],
+                        "x-ob-enum": null
+                    }
+                ]
+            },
+            "County": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "County of the physical or mailing address",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "Email": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Email address",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "MobilePhone": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Phone Number of a cell phone or mobile device.  This phone is expected to be able to receive text messages.  Characters like hyphen, period, x for extension are allowed.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "WorkPhone": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Phone number to be used during working hours.  Characters like hyphen, period, x for extension are allowed.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "HomePhone": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Phone number to be used for high priority calls only.  Characters like hyphen, period, x for extension are allowed.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "FirstName": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "First name of a person.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "LastName": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "The last name of person.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": "",
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "Altitude": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementNumber"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Decimal value of latitude of the physical site in degrees. Positive North of the Equator. Negative South of the Equator",
+                        "x-ob-item-type": "num:lengthItemType",
+                        "x-ob-unit": [
+                            "Foot",
+                            "Inch",
+                            "Mile",
+                            "Nautical Mile",
+                            "Yard",
+                            "Centimetre",
+                            "Decimetre",
+                            "Kilometre",
+                            "Metre",
+                            "Millimetre"
+                        ],
+                        "x-ob-enum": null
+                    }
+                ]
+            },
+            "Location": {
+                "type": "object",
+                "description": "A location is defined by Latitude, Longitude and Altitude.",
+                "properties": {
+                    "Latitude": {
+                        "$ref": "#/components/schemas/Latitude"
+                    },
+                    "Longitude": {
+                        "$ref": "#/components/schemas/Longitude"
+                    },
+                    "Altitude": {
+                        "$ref": "#/components/schemas/Altitude"
+                    },
+                    "Elevation": {
+                        "$ref": "#/components/schemas/Elevation"
+                    }
+                }
+            },
+            "Elevation": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementNumber"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Height from ground level.",
+                        "x-ob-item-type": "num:lengthItemType",
+                        "x-ob-unit": [
+                            "Foot",
+                            "Inch",
+                            "Mile",
+                            "Nautical Mile",
+                            "Yard",
+                            "Centimetre",
+                            "Decimetre",
+                            "Kilometre",
+                            "Metre",
+                            "Millimetre"
+                        ],
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "AddrLine1": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "First line of a mailing or physical address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": [],
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "AddrLine2": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Second line of a mailing or physical address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": [],
+                        "x-ob-enum": ""
+                    }
+                ]
+            },
+            "AddrLine3": {
+                "allOf": [
+                    {
+                        "$ref": "Master-Solar-Taxonomy-040120.json#/components/schemas/TaxonomyElementString"
+                    },
+                    {
+                        "type": "object",
+                        "description": "Third line of a mailing or physical address.",
+                        "x-ob-item-type": "xbrli:stringItemType",
+                        "x-ob-unit": [],
+                        "x-ob-enum": ""
+                    }
+                ]
+            }
+        }
+    }
+}
